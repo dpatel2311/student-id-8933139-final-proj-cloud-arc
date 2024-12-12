@@ -1,5 +1,5 @@
 resource "aws_security_group" "ec2_sg" {
-  name        = "ec2_security_group"
+  name        = "8933139_security_group"
   vpc_id      = aws_vpc.main.id
 
   ingress {
@@ -24,11 +24,11 @@ resource "aws_security_group" "ec2_sg" {
   }
 
   tags = {
-    Name = "EC2SecurityGroup"
+    Name = "8933139SecurityGroup"
   }
 }
 
-resource "aws_instance" "web_server" {
+resource "aws_instance" "8933139" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = aws_subnet.public_subnet.id
@@ -36,6 +36,6 @@ resource "aws_instance" "web_server" {
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]  
 
   tags = {
-    Name = "WebServerInstance"
+    Name = "8933139 server"
   }
 }
